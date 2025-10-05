@@ -1,0 +1,10 @@
+import Likes from "../Models/Likes.js"
+
+export default async function (req, res) {
+    try {
+        let likes = await Likes.find({post_id: req.params.post_id});
+        res.status(201).json({"Number" : likes.length});
+    } catch (e) {
+        res.status(500).json({message: "Internal server error: " + e});
+    }
+}

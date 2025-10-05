@@ -1,0 +1,41 @@
+.glow-border {
+    border: 2px solid var(--glow-color, #ff69b4);
+    box-shadow: 0 0 10px var(--glow-color, #ff69b4), 
+                0 0 20px var(--glow-color, #ff69b4), 
+                0 0 30px var(--glow-color, #ff69b4);
+    animation: glow 2s infinite alternate;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px var(--glow-color), 
+                    0 0 10px var(--glow-color), 
+                    0 0 15px var(--glow-color);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--glow-color), 
+                    0 0 20px var(--glow-color), 
+                    0 0 30px var(--glow-color);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--glow-color), 
+                    0 0 10px var(--glow-color), 
+                    0 0 15px var(--glow-color);
+    }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.65;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
